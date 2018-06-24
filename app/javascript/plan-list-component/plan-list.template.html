@@ -1,0 +1,27 @@
+</br>
+<select class="form-control"ng-model="$ctrl.filterByDay">
+	<option value="">Wszystkie dni</option>
+	<option value="Poniedzialek">Poniedzialek</option>
+	<option value="Wtorek">Wtorek</option>
+	<option value="Sroda">Sroda</option>
+	<option value="Czwartek">Czwartek</option>
+	<option value="Piatek">Piatek</option>
+</select>
+<select class="form-control"ng-model="$ctrl.filterByHour">
+	<option value="">Wszystkie godziny</option>
+	<option value="8">8.15</option>
+	<option value="10">10.15</option>
+	<option value="12">12.15</option>
+	<option value="14">14.15</option>
+	<option value="16">16.15</option>
+</select>
+</br>
+<div class="list-group"ng-repeat="day in $ctrl.days | filter:$ctrl.filterByDay">
+	<div class="list-group-item">{{day.day}}</div>
+	<div ng-repeat="hour in day.hours | filter:{hour: $ctrl.filterByHour}">
+		<b>{{hour.hour}}.15: </b>| 
+		<span ng-repeat="classroom in hour.classrooms | orderBy: classroom">
+			<a href="#!/classrooms/{{classroom}}">{{classroom}}</a> | 
+		</span>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+</br>
+<select class="form-control"ng-model="$ctrl.filterByFloor">
+	<option value="">Wszystkie pietra</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+</select>
+<input ng-model="$ctrl.filterById"class="form-control"type="text"></input>
+</br>
+<div class="list-group"ng-repeat="classroom in $ctrl.classrooms | orderBy: 'id'" ng-if="(classroom.id[0]==$ctrl.filterByFloor || $ctrl.filterByFloor =='') && (classroom.id==$ctrl.filterById || $ctrl.filterById =='' )">
+	<a class="list-group-item"href="#!/classrooms/{{classroom.id}}">{{classroom.id}}</a>
+</div>
+
+<form>
+	<input placeholder="Numer sali do dodania" class="form-control"type="text" ng-model="$ctrl.newClassroom.id" required>
+	<button type="submit" ng-click="$ctrl.add()" class="btn btn-success">Submit</button>
+</form>
+</br>
+<form>
+	<input placeholder="Numer sali do usuniecia"class="form-control"type="text" ng-model="$ctrl.classroomToDelete.id" required>
+	<button type="submit" ng-click="$ctrl.delete()"class="btn btn-danger">Delete</button>
+</form>

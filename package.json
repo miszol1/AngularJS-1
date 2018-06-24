@@ -1,0 +1,12 @@
+{
+    "name": "plansal",
+    "private": true,
+    "version": "0.0.0",
+    "dependencies": {
+        "http-server": "^0.9.0",
+        "bower": "^1.7.7"
+    },
+    "scripts": {
+        "start": "http-server ./app -a localhost -p 8000 -c-1"
+    }
+}

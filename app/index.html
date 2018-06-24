@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="planApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Plan sal</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="javascript/app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="javascript/classroom-list-component/classroom-list.module.js"></script>
+    <script src="javascript/classroom-list-component/classroom-list.component.js"></script>
+    <script src="javascript/classroom-details-component/classroom-details.module.js"></script>
+    <script src="javascript/classroom-details-component/classroom-details.component.js"></script>
+    <script src="javascript/plan-list-component/plan-list.module.js"></script>
+    <script src="javascript/plan-list-component/plan-list.component.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <input class="btn btn-primary"type="button" value="Plan" onclick="window.location.href='#!/plan'" />
+    <input class="btn btn-primary"type="button" value="Lista sal" onclick="window.location.href='#!/classrooms'" />
+    </br>
+        <div ng-view></div>
+    </div>
+  </body>
+</html>
